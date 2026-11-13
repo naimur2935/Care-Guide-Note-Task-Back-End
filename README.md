@@ -83,8 +83,6 @@ npm run seed:demo
 
 The script adds up to 20 private notes with `Demo ·` titles and skips matching demo titles already owned by that account. If `DEMO_EMAIL` is omitted, the target falls back to `ADMIN_EMAIL`, then the first user in the database. Review the target account before running it.
 
-The manual import file at [`backend/src/scripts/demo-notes-import.json`](backend/src/scripts/demo-notes-import.json) uses a placeholder ObjectId. Replace every placeholder with the intended user's actual `_id` before importing it into MongoDB Compass; otherwise, the notes will not belong to that user.
-
 ## Authentication and authorization
 
 Send a JWT in the standard Authorization header for protected endpoints:
