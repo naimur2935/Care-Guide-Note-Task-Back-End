@@ -61,7 +61,7 @@ For production, use:
 npm start
 ```
 
-The health endpoint is `GET /`. It returns `{ "status": "ok" }` after the server starts. The server only listens after MongoDB connects successfully.
+`GET /` is a liveness endpoint and returns `{ "status": "ok" }`. Use `GET /health` to verify MongoDB connectivity; it returns `{ "status": "ok", "database": "connected" }` only after connecting. API routes await a shared MongoDB connection before accessing models, which also supports serverless cold starts.
 
 ## Scripts
 
@@ -175,6 +175,7 @@ Common error statuses:
 | `404` | Requested record or route was not found. |
 | `409` | Duplicate email address. |
 | `500` | Unexpected server error. |
+| `503` | Database configuration is missing or MongoDB cannot be reached. |
 
 ## Data models
 
@@ -203,6 +204,8 @@ Editors store formatted note/post content as HTML. Images and supported document
 
 ## Deployment
 
+The deployed backend base URL is `https://care-guide-note-task-back-end.vercel.app`; its REST API prefix is `https://care-guide-note-task-back-end.vercel.app/api`. Configure the frontend's `VITE_API_URL` to the API prefix. Check `GET /health` after deployment to confirm both the function and MongoDB are available.
+
 For a Node hosting service such as Render:
 
 1. Select the repository and set the service root directory to `backend`.
@@ -210,6 +213,6 @@ For a Node hosting service such as Render:
 3. Configure `MONGO_URI`, `JWT_SECRET`, `JWT_EXPIRES_IN`, and the `ADMIN_*` values in the host's environment settings.
 4. Ensure the MongoDB deployment permits connections from the API host.
 5. Restrict CORS to the deployed frontend's origin before making the API public. The current Express app enables CORS without an origin allow-list.
-6. Deploy the frontend with `VITE_API_URL` pointing to the API base, such as `https://api.example.com/api`.
+6. Deploy the frontend with `VITE_API_URL` pointing to the API base, such as `https://care-guide-note-task-back-end.vercel.app/api`.
 
 Never put backend secrets in frontend environment variables or commit them to source control.
