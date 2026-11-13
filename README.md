@@ -49,6 +49,15 @@ Create the initial administrator and synchronize the model indexes:
 npm run seed:admin
 ```
 
+### Admin login credentials (testing)
+
+For testing the admin pages, sign in with:
+
+- Email: `admin@example.com`
+- Password: `Admin@12345`
+
+The backend must have an admin account configured with these credentials. They are demo credentials only; never use them for a production administrator, and change or remove them before production deployment.
+
 Start the API:
 
 ```sh
@@ -70,11 +79,11 @@ npm start
 | `npm run dev` | Run the API with Node's watch mode. |
 | `npm start` | Start the API for production. |
 | `npm run seed:admin` | Synchronize User indexes and create the configured admin if it does not exist. |
-| `npm run seed:demo` | Add missing demo notes to a selected account. |
+| `npm run seed:demo` | Add missing demo notes and public posts to a selected account. |
 
-The server also runs the idempotent demo seed after connecting to MongoDB at startup. Set `DEMO_EMAIL` to an existing account to choose where the private demo notes belong; it takes precedence over `ADMIN_EMAIL`. If no matching target account exists yet, the server logs a skip and continues starting. Configure `DEMO_EMAIL` in both local `.env` and the deployment environment if the same account should receive the notes.
+The server also runs the idempotent demo seed after connecting to MongoDB at startup. Set `DEMO_EMAIL` to an existing account to choose where the private demo notes and public demo posts belong; it takes precedence over `ADMIN_EMAIL`. If no matching target account exists yet, the server logs a skip and continues starting. Configure `DEMO_EMAIL` in both local `.env` and the deployment environment if the same account should receive the seed data.
 
-### Demo notes
+### Demo data
 
 Register the intended account first, then select it explicitly when seeding:
 
@@ -83,7 +92,7 @@ $env:DEMO_EMAIL = "account@example.com"
 npm run seed:demo
 ```
 
-The script adds up to 20 private notes with `Demo ·` titles and skips matching demo titles already owned by that account. If `DEMO_EMAIL` is omitted, the target falls back to `ADMIN_EMAIL`, then the first user in the database. Review the target account before running it.
+The script adds up to 20 private notes and 20 public community posts with `Demo ·` titles. Existing matching titles are skipped independently for notes and posts, so rerunning the script fills in any missing seed data without duplicating existing items. If `DEMO_EMAIL` is omitted, the target falls back to `ADMIN_EMAIL`, then the first user in the database. Review the target account before running it; seeded posts are visible to everyone by design.
 
 ## Authentication and authorization
 
