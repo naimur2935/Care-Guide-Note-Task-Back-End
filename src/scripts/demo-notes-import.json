@@ -1,0 +1,142 @@
+[
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · A slower start",
+    "content": "<p>Leave the first ten minutes of the morning unscheduled. Make tea, open the window, and decide what matters most today.</p>",
+    "createdAt": { "$date": "2026-11-13T04:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-13T04:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Weekend market list",
+    "content": "<ul><li>Ripe tomatoes</li><li>Fresh basil</li><li>A loaf of sourdough</li><li>Something seasonal to try</li></ul>",
+    "createdAt": { "$date": "2026-11-13T03:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-13T03:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Project idea: reading nook",
+    "content": "<p>Use the quiet corner by the window. Add a warm floor lamp, one narrow shelf, and a comfortable chair.</p>",
+    "createdAt": { "$date": "2026-11-13T02:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-13T02:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Questions for the next check-in",
+    "content": "<ol><li>What is going well?</li><li>What feels stuck?</li><li>What is one useful next step?</li></ol>",
+    "createdAt": { "$date": "2026-11-13T01:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-13T01:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · A recipe to remember",
+    "content": "<p>Roast chickpeas with cumin and smoked paprika. Serve with lemon yogurt, cucumber, and warm flatbread.</p>",
+    "createdAt": { "$date": "2026-11-13T00:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-13T00:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Books to borrow",
+    "content": "<p>Pick one short story collection and one book about gardens. Ask Sam for the title they mentioned last week.</p>",
+    "createdAt": { "$date": "2026-11-12T23:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T23:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Small things that helped",
+    "content": "<ul><li>A short walk after lunch</li><li>Putting the phone in another room</li><li>Writing tomorrow’s first task down</li></ul>",
+    "createdAt": { "$date": "2026-11-12T22:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T22:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Gift ideas",
+    "content": "<p>Look for a handmade ceramic mug or a small print from a local artist. Keep the wrapping simple.</p>",
+    "createdAt": { "$date": "2026-11-12T21:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T21:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Places for a day trip",
+    "content": "<p>Check the lakeside trail, the old railway town, and the botanical garden. Leave early and bring snacks.</p>",
+    "createdAt": { "$date": "2026-11-12T20:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T20:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Ideas for the balcony",
+    "content": "<p>Try mint in a separate pot, two hardy herbs, and a small outdoor light. Measure the railing before buying planters.</p>",
+    "createdAt": { "$date": "2026-11-12T19:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T19:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · A useful reminder",
+    "content": "<p>When a task feels too large, write the smallest next action. Ten focused minutes still count as progress.</p>",
+    "createdAt": { "$date": "2026-11-12T18:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T18:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Playlist for focused work",
+    "content": "<p>Instrumental music, steady tempo, no lyrics. Keep the volume low enough to hear the room.</p>",
+    "createdAt": { "$date": "2026-11-12T17:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T17:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Things to ask the plumber",
+    "content": "<ol><li>Can the tap be repaired or should it be replaced?</li><li>How long will the part take to arrive?</li><li>Is there anything to do before the visit?</li></ol>",
+    "createdAt": { "$date": "2026-11-12T16:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T16:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · A note on the new routine",
+    "content": "<p>The short evening reset is easier to keep than a full clean. Clear the desk, set out a notebook, and stop there.</p>",
+    "createdAt": { "$date": "2026-11-12T15:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T15:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Lunch combinations",
+    "content": "<p>Rice, roasted vegetables, and tahini. Or lentils with greens, lemon, and toasted seeds.</p>",
+    "createdAt": { "$date": "2026-11-12T14:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T14:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Ideas for the team retro",
+    "content": "<p>Keep, change, try. Give everyone a quiet minute to write before the discussion starts.</p>",
+    "createdAt": { "$date": "2026-11-12T13:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T13:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Garden observations",
+    "content": "<p>The west-facing pot dries out first. Move the seedlings a little farther from the wall and check them at dusk.</p>",
+    "createdAt": { "$date": "2026-11-12T12:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T12:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Useful keyboard shortcuts",
+    "content": "<ul><li>Search the current page before opening another tab</li><li>Use headings to make long notes easier to scan</li><li>Capture the thought first; organize it later</li></ul>",
+    "createdAt": { "$date": "2026-11-12T11:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T11:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Packing list for two nights",
+    "content": "<p>Weather layer, comfortable shoes, charger, water bottle, book, and the small notebook by the bed.</p>",
+    "createdAt": { "$date": "2026-11-12T10:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T10:40:00.000Z" }
+  },
+  {
+    "userId": { "$oid": "000000000000000000000000" },
+    "title": "Demo · Month-end reflection",
+    "content": "<p>What felt meaningful? What took more energy than expected? What can be made simpler next month?</p>",
+    "createdAt": { "$date": "2026-11-12T09:40:00.000Z" },
+    "updatedAt": { "$date": "2026-11-12T09:40:00.000Z" }
+  }
+]
