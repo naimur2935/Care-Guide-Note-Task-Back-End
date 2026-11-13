@@ -72,6 +72,8 @@ npm start
 | `npm run seed:admin` | Synchronize User indexes and create the configured admin if it does not exist. |
 | `npm run seed:demo` | Add missing demo notes to a selected account. |
 
+The server also runs the idempotent demo seed after connecting to MongoDB at startup. Set `DEMO_EMAIL` to an existing account to choose where the private demo notes belong; it takes precedence over `ADMIN_EMAIL`. If no matching target account exists yet, the server logs a skip and continues starting. Configure `DEMO_EMAIL` in both local `.env` and the deployment environment if the same account should receive the notes.
+
 ### Demo notes
 
 Register the intended account first, then select it explicitly when seeding:

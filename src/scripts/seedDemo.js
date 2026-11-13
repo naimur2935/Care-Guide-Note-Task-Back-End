@@ -2,6 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const User = require('../models/User');
 const Note = require('../models/Note');
+const connectDatabase = require('../utils/connectDatabase');
 
 const demoNotes = [
   ['A slower start', '<p>Leave the first ten minutes of the morning unscheduled. Make tea, open the window, and decide what matters most today.</p>'],
@@ -26,9 +27,9 @@ const demoNotes = [
   ['Month-end reflection', '<p>What felt meaningful? What took more energy than expected? What can be made simpler next month?</p>'],
 ];
 
-async function seedDemo() {
+async function seedDemo({ skipIfNoTarget = false } = {}) {
   if (!process.env.MONGO_URI) throw new Error('Set MONGO_URI before seeding demo notes.');
-  await mongoose.connect(process.env.MONGO_URI);
+  await connectDatabase();
 
   const email = String(process.env.DEMO_EMAIL || process.env.ADMIN_EMAIL || '').trim().toLowerCase();
   const user = email
@@ -36,6 +37,7 @@ async function seedDemo() {
     : await User.findOne().sort({ _id: 1 }).select('_id email');
 
   if (!user) {
+    if (skipIfNoTarget) return { skipped: true, added: 0, alreadyExisted: 0 };
     throw new Error('No target user found. Register a user or seed the admin first, then set DEMO_EMAIL.');
   }
 
@@ -54,14 +56,26 @@ async function seedDemo() {
     }));
 
   if (newNotes.length) await Note.insertMany(newNotes);
-  console.log(`Demo seed complete for ${user.email}: added ${newNotes.length} notes; ${existingTitles.size} already existed.`);
+  return {
+    skipped: false,
+    targetEmail: user.email,
+    added: newNotes.length,
+    alreadyExisted: existingTitles.size,
+  };
 }
 
-seedDemo()
-  .catch((error) => {
-    console.error('Demo seed failed:', error);
-    process.exitCode = 1;
-  })
-  .finally(async () => {
-    if (mongoose.connection.readyState) await mongoose.disconnect();
-  });
+module.exports = seedDemo;
+
+if (require.main === module) {
+  seedDemo()
+    .then(({ targetEmail, added, alreadyExisted }) => {
+      console.log(`Demo seed complete for ${targetEmail}: added ${added} notes; ${alreadyExisted} already existed.`);
+    })
+    .catch((error) => {
+      console.error('Demo seed failed:', error);
+      process.exitCode = 1;
+    })
+    .finally(async () => {
+      if (mongoose.connection.readyState) await mongoose.disconnect();
+    });
+}
